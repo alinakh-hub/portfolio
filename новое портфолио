@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Алина Хайруллина — AI-маркетолог & Вайбкодер</title>
+<meta name="description" content="Портфолио Алины Хайруллиной: AI-маркетолог, вайбкодер, специалист по автоматизации маркетинга через n8n, Claude Code и AI-агентов.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0b;
+    --surface: #131316;
+    --border: #27272a;
+    --text-primary: #f4f4f5;
+    --text-secondary: #a1a1aa;
+    --accent: #3b82f6;
+    --accent-glow: rgba(59, 130, 246, 0.15);
+    --success: #22c55e;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content { max-width: 800px; position: relative; z-index: 1; }
+  
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .badge::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--success);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--success);
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 span { color: var(--accent); }
+
+  .hero p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+  }
+  .stat-item h3 {
+    font-size: 36px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .stat-item p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 80px 0; }
+  
+  .section-header {
+    margin-bottom: 48px;
+  }
+  .section-header h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  .section-header p {
+    color: var(--text-secondary);
+    max-width: 600px;
+  }
+
+  /* ─── SKILLS ─── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .skill-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+  .skill-card h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .skill-card ul {
+    list-style: none;
+    color: var(--text-secondary);
+    font-size: 15px;
+  }
+  .skill-card li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+  }
+  .skill-card li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .tag {
+    font-size: 12px;
+    padding: 4px 10px;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    border-radius: 6px;
+    font-weight: 600;
+  }
+
+  /* ─── CASES ─── */
+  .cases-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .case-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .case-card.featured {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px var(--accent-glow);
+  }
+  .case-card.featured::before {
+    content: 'ГЛАВНЫЙ КЕЙС';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .case-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .case-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .case-subtitle {
+    color: var(--text-secondary);
+    font-size: 15px;
+  }
+  .case-period {
+    font-size: 13px;
+    color: var(--text-secondary);
+    background: var(--bg);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+  
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  .case-block h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .case-block p, .case-block li {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .case-block ul {
+    list-style: none;
+  }
+  .case-block li {
+    margin-bottom: 8px;
+    padding-left: 16px;
+    position: relative;
+  }
+  .case-block li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--text-secondary);
+  }
+
+  .metrics-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    background: var(--bg);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--border);
+  }
+  .metric {
+    text-align: center;
+  }
+  .metric-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .metric-value.highlight { color: var(--success); }
+  .metric-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  /* ─── PROOF GALLERY ─── */
+  .proof-section {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .proof-section h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .proof-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .proof-gallery img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    cursor: zoom-in;
+    transition: transform 0.2s;
+    background: var(--bg);
+    min-height: 120px;
+    object-fit: cover;
+  }
+  .proof-gallery img:hover {
+    transform: scale(1.02);
+  }
+
+  /* ─── QUOTE ─── */
+  .quote-section {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 60px 0;
+    text-align: center;
+  }
+  .quote-text {
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text-primary);
+    max-width: 800px;
+    margin: 0 auto 24px;
+    line-height: 1.6;
+  }
+  .quote-author {
+    color: var(--text-secondary);
+    font-size: 15px;
+  }
+  .quote-author strong { color: var(--accent); }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .footer h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .footer p {
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+  }
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.9; }
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .hero { padding: 40px 0; min-height: auto; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .case-grid { grid-template-columns: 1fr; gap: 24px; }
+    .case-card { padding: 24px; }
+    .metrics-row { grid-template-columns: 1fr 1fr; }
+    .proof-gallery { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="badge">Открыта к предложениям</div>
+        <h1>Алина Хайруллина<br><span>AI-маркетолог & Вайбкодер</span></h1>
+        <p>
+          Выстраиваю маркетинговые процессы с нуля и автоматизирую их. Там, где обычные маркетологи идут к разработчикам с просьбой «сделать кнопочку», я самостоятельно собираю AI-агентов и пайплайны через n8n, Claude Code и промпт-инжиниринг. Это экономит команде десятки часов и увеличивает маржинальность проектов.
+        </p>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>4+ года</h3>
+            <p>Опыта в digital-маркетинге и B2B/B2C продажах</p>
+          </div>
+          <div class="stat-item">
+            <h3>>90%</h3>
+            <p>Маржинальность созданного мной AI-продукта</p>
+          </div>
+          <div class="stat-item">
+            <h3>57+</h3>
+            <p>Квалифицированных лидов из органического трафика</p>
+          </div>
+          <div class="stat-item">
+            <h3>×5</h3>
+            <p>Рост выручки клиента благодаря внедренной стратегии</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <h2>Ключевые компетенции</h2>
+        <p>Сочетаю классический маркетинг, глубокую аналитику и технические навыки автоматизации.</p>
+      </div>
+      
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>🤖 AI-агенты и Вайбкодинг</h3>
+          <ul>
+            <li>Создание AI-агентов через Claude Code и промпт-инжиниринг</li>
+            <li>Сборка сложных пайплайнов в n8n (парсинг, генерация, публикация)</li>
+            <li>Интеграция ChatGPT API, Notion, Google Sheets</li>
+            <li>Автоматизация трендвотчинга и SEO-контента</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Claude Code</span>
+            <span class="tag">n8n</span>
+            <span class="tag">ChatGPT API</span>
+            <span class="tag">Промпт-инжиниринг</span>
+            <span class="tag">Notion</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>📈 Маркетинг и Стратегия</h3>
+          <ul>
+            <li>Разработка контент-стратегий с нуля (B2B и B2C)</li>
+            <li>A/B тестирование гипотез и форматов контента</li>
+            <li>Органический рост сообществ и работа с инфлюенсерами</li>
+            <li>Понимание воронки продаж и JTBD-практик</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Telegram</span>
+            <span class="tag">YouTube</span>
+            <span class="tag">ВКонтакте</span>
+            <span class="tag">Стратегия</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>📊 Аналитика и Управление</h3>
+          <ul>
+            <li>Сквозная аналитика, расчет KPI и юнит-экономики</li>
+            <li>Постановка задач команде по SMART и контроль дедлайнов</li>
+            <li>Работа с данными: Яндекс Метрика, LiveDune, Alytics</li>
+            <li>Самостоятельное управление проектами от устава до отчета</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Яндекс Метрика</span>
+            <span class="tag">LiveDune</span>
+            <span class="tag">Growth Hacking</span>
+            <span class="tag">Notion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES SECTION -->
+  <section id="cases" style="background: var(--surface);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Избранные кейсы</h2>
+        <p>Реальные проекты с измеримыми бизнес-результатами и визуальными доказательствами.</p>
+      </div>
+
+      <div class="cases-list">
+        <!-- CASE 1: AI FACTORY (FEATURED) -->
+        <div class="case-card featured">
+          <div class="case-header">
+            <div>
+              <div class="case-title">ИИ контент-завод: трендвотчинг и автоматизация на n8n</div>
+              <div class="case-subtitle">Собственный продукт: система автоматизации контент-производства</div>
+            </div>
+            <div class="case-period">2025 — настоящее время</div>
+          </div>
+          
+          <div class="case-grid">
+            <div class="case-block">
+              <h4>Задача</h4>
+              <p>Создать систему автоматизации контент-производства: трендвотчинг конкурентов, генерация сценариев, написание постов/SEO-статей по ТЗ из Notion.</p>
+            </div>
+            <div class="case-block">
+              <h4>Действия</h4>
+              <ul>
+                <li>Парсинг конкурентов в Instagram, TikTok и YouTube</li>
+                <li>Анализ залетевших роликов: триггеры, причины успеха</li>
+                <li>Автоматическое написание сценариев и постов через AI-агентов (Claude Code + n8n)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="metrics-row">
+            <div class="metric">
+              <div class="metric-value highlight">2</div>
+              <div class="metric-label">Клиента купили</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">$250/мес</div>
+              <div class="metric-label">Стоимость подписки</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">$2 500</div>
+              <div class="metric-label">Суммарная выручка</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value highlight">>90%</div>
+              <div class="metric-label">Маржинальность</div>
+            </div>
+          </div>
+
+          <div class="proof-section">
+            <h4>📸 Визуальные доказательства</h4>
+            <div class="proof-gallery">
+              <img src="proof-n8n-pipeline.jpg" alt="Скриншот пайплайна n8n" onerror="this.src='https://placehold.co/400x250/131316/3b82f6?text=n8n+Pipeline'">
+              <img src="proof-claude-code.jpg" alt="Скриншот работы с Claude Code" onerror="this.src='https://placehold.co/400x250/131316/3b82f6?text=Claude+Code'">
+              <img src="proof-revenue.jpg" alt="Скриншот выручки" onerror="this.src='https://placehold.co/400x250/131316/3b82f6?text=Revenue+Proof'">
+            </div>
+          </div>
+        </div>
+
+        <!-- CASE 2: HFE CLINIC -->
+        <div class="case-card">
+          <div class="case-header">
+            <div>
+              <div class="case-title">Ведение соцсетей, контент и аналитика для клиники HFE</div>
+              <div class="case-subtitle">Медицинская эстетика и косметология</div>
+            </div>
+            <div class="case-period">Июнь 2024 — Май 2025</div>
+          </div>
+          
+          <div class="case-grid">
+            <div class="case-block">
+              <h4>Задача и действия</h4>
+              <ul>
+                <li>Развитие присутствия клиники: посты для ВК, описания к видео, организация съемок</li>
+                <li>Аналитика каналов через Alytics и Яндекс Метрику еженедельно</li>
+                <li>Закупка рекламы у блогера: охват ×2, переходы ×5, конверсия ×2</li>
+              </ul>
+            </div>
+            <div class="case-block">
+              <h4>Результаты</h4>
+              <ul>
+                <li><strong>32%</strong> пациентов из соцсетей</li>
+                <li><strong>751</strong> органическая заявка</li>
+                <li><strong>193K</strong> просмотров YouTube (рост с 14K)</li>
+                <li>Лучший ролик: 26 300 просмотров, VR 134%, ERR 59,8%</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="proof-section">
+            <h4>📸 Визуальные доказательства</h4>
+            <div class="proof-gallery">
+              <img src="proof-hfe-youtube.jpg" alt="Скриншот статистики YouTube" onerror="this.src='https://placehold.co/400x250/131316/3b82f6?text=YouTube+193K'">
+              <img src="proof-hfe-vk.jpg" alt="Скриншот статистики ВКонтакте" onerror="this.src='https://placehold.co/400x250/131316/3b82f6?text=VK+Analytics'">
+            </div>
+          </div>
+        </div>
+
+        <!-- CASE 3: TELEGRAM -->
+        <div class="case-card">
+          <div class="case-header">
+            <div>
+              <div class="case-title">Органический рост Telegram-канала агентства с нуля</div>
+              <div class="case-subtitle">AI-маркетинговое агентство Humanswith.ai</div>
+            </div>
+            <div class="case-period">Август 2024 — Август 2025</div>
+          </div>
+          
+          <div class="case-grid">
+            <div class="case-block">
+              <h4>Задача и действия</h4>
+              <ul>
+                <li>На старте — 75 подписчиков. Рост органически, без бюджета.</li>
+                <li>Анализ конкурентов и ЦА, разработка стратегии, рубрик, форматов</li>
+                <li>Ведение канала по стратегии 12 месяцев, точечная закупка рекламы</li>
+              </ul>
+            </div>
+            <div class="case-block">
+              <h4>Результаты</h4>
+              <ul>
+                <li><strong>75 → 203</strong> подписчиков (органика +171% без бюджета)</li>
+                <li><strong>57</strong> лидов из закупа рекламы</li>
+                <li><strong>×5</strong> рост выручки агентства</li>
+                <li><strong>5,11%</strong> средний ER канала</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="proof-section">
+            <h4>📸 Визуальные доказательства</h4>
+            <div class="proof-gallery">
+              <img src="proof-telegram-203-subs.jpg" alt="Скриншот роста до 203 подписчиков" onerror="this.src='https://placehold.co/400x250/131316/3b82f6?text=Telegram+203+subs'">
+              <img src="proof-telegram-leads.jpg" alt="Скриншот 57 лидов" onerror="this.src='https://placehold.co/400x250/131316/3b82f6?text=57+Leads'">
+            </div>
+          </div>
+        </div>
+
+        <!-- CASE 4: USA B2B -->
+        <div class="case-card">
+          <div class="case-header">
+            <div>
+              <div class="case-title">Контент-стратегия с A/B тестированием для логистического диспетчера в США</div>
+              <div class="case-subtitle">Рынок: США, грузоперевозки (NDA)</div>
+            </div>
+            <div class="case-period">Март — Август 2025</div>
+          </div>
+          
+          <div class="case-grid">
+            <div class="case-block">
+              <h4>Задача и действия</h4>
+              <ul>
+                <li>Контент-стратегия с нуля под 3 платформы (YouTube, TikTok, Instagram)</li>
+                <li>20+ гипотез за 4 месяца: форматы, триггеры, платформы</li>
+                <li>Инсайт: одинаковый заголовок внутри и под видео в TikTok → +190% роста</li>
+              </ul>
+            </div>
+            <div class="case-block">
+              <h4>Результаты</h4>
+              <ul>
+                <li><strong>198 594</strong> просмотров YouTube</li>
+                <li><strong>+190%</strong> рост просмотров в TikTok</li>
+                <li>Выведены 5 рабочих формул контента для ниши</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="proof-section">
+            <h4>📸 Визуальные доказательства</h4>
+            <div class="proof-gallery">
+              <img src="proof-usa-tiktok.jpg" alt="Скриншот роста TikTok +190%" onerror="this.src='https://placehold.co/400x250/131316/3b82f6?text=TikTok+190%25'">
+              <img src="proof-usa-youtube.jpg" alt="Скриншот YouTube 198K" onerror="this.src='https://placehold.co/400x250/131316/3b82f6?text=YouTube+198K'">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE SECTION -->
+  <section class="quote-section">
+    <div class="container">
+      <p class="quote-text">
+        «Как вайбкодер – необычная сильная сторона – Алина не боится технических задач. У неё нет классического бэкграунда разработчика, но там, где обычные маркетологи идут к технарям с просьбой "ну сделайте мне кнопочку", Алина садится и пилит сама. Она спокойно собирает рабочие пайплайны для генерации видео, связывает n8n, Notion, Google платформу и нейронки. Это экономит команде десятки часов и делает её автономной».
+      </p>
+      <p class="quote-author">— <strong>Григорий Шевченко</strong>, CEO Humanswith.ai (из рекомендательного письма)</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <h2>Давайте обсудим ваш проект</h2>
+      <p>Я открыта к предложениям на позиции AI-маркетолога, специалиста по автоматизации или контент-стратега с техническим бэкграундом.</p>
+      <div class="contact-links">
+        <a href="mailto:your.email@example.com" class="btn">Написать на Email</a>
+        <a href="https://t.me/your_telegram" class="btn btn-outline" target="_blank">Telegram</a>
+        <a href="https://github.com/alinakh-hub" class="btn btn-outline" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
